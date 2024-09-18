@@ -1,0 +1,514 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css2?family=Chocolate+Classical+Sans&family=Noto+Serif+TC:wght@200..900&display=swap);
+
+@font-face {
+  font-family: Tangerine;
+  src: url(../webfonts/Tangerine.ttf);
+  font-family: SourceSerif4;
+  src: url(../webfonts/SourceSerif4.ttf);
+}
+
+/* 重置所有標籤的樣式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 重置字體 */
+body {
+  font-family:
+    /*西文*/
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+    /*中文*/
+    "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+  
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+/* 重置列表 */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 重置圖片 */
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 重置連接 */
+a {
+  text-decoration: none;
+}
+
+:root {
+  /* 主色調 */
+  --black: #000000;
+  --White: #FFFFFF;
+  --pink: #FD5479;
+
+  --White_02: rgb(255, 255, 255, .1);
+  --black-White: rgb(0, 0, 0,0.0) 30%,  #000000 50%;
+
+
+
+}
+
+/* 從此處開始 */
+body {
+  background-color: var(--black);
+  color: var(--White);
+}
+
+#index .indexitem {
+  width: 100%;
+  height: 100vh;
+}
+
+/* 文字 */
+h2 {
+  font-family: Tangerine;
+  font-weight: 600;
+  font-size: 18.6vw;
+  color: var(--White);
+  line-height: 0.6;
+  transition: 1s;
+}
+
+
+h3 {
+  font-family: SourceSerif4;
+  letter-spacing: 0.3rem;
+  font-size: 1.8vw;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 1.5vw;
+  font-weight: 400;
+  letter-spacing: 1rem;
+  /* line-height :1; */
+}
+.contentTitle p{
+  padding: 7px 0 7px 0;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+p{
+  font-size: 1.2vw;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+}
+
+/* 文字大box */
+.box {
+  width: 22%;
+  height: 100%;
+  position: fixed;
+  z-index: 999;
+  color: var(--pink);
+  left: 5%;
+}
+
+.subSlogan {
+  width: 100%;
+  height: 15%;
+  position: fixed;
+  z-index: 888;
+  color: var(--pink);
+  top: 36%;
+  right: -5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+}
+
+/* 單行文字容器 */
+.box .title,
+.box .role,
+.box .role1,
+.subSlogan .role,
+.subSlogan .role1 {
+  position: absolute;
+}
+
+.box .title,
+.box .role,
+.box .role1 {
+  /* 文字改垂直書寫,從左到右 */
+  writing-mode: vertical-lr;
+  /* 跟隨文字的寬度 */
+  width: fit-content;
+}
+
+.box .title {
+  top: 7%;
+  left: 2%;
+}
+
+.box .role,
+.box .role1 {
+  height: auto;
+  top: 7%
+}
+
+.subSlogan .role,
+.subSlogan .role1 {
+  width: auto;
+  height: fit-content;
+}
+
+.box .role {
+  left: 50%;
+}
+
+.box .role1 {
+  right: 0%;
+}
+
+.subSlogan .role {
+  top: 0%;
+}
+
+.subSlogan .role1 {
+  top: 50%;
+}
+
+/* 文字底色 */
+.box .title .block,
+.box .role .block,
+.box .role1 .block,
+.subSlogan .role .block,
+.subSlogan .role1 .block {
+  width: 0%;
+  height: inherit;
+  background: var(--pink);
+  position: absolute;
+}
+
+.box .title .block,
+.box .role .block,
+.box .role1 .block {
+  animation: mainBlock 1s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+}
+
+.subSlogan .role .block,
+.subSlogan .role1 .block {
+  animation: secBlock 1s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+}
+
+.box .title .block {
+  display: flex;
+}
+
+/* 底色的延後秒數 */
+.box .role .block {
+  animation-delay: 1s;
+}
+
+.box .role1 .block {
+  animation-delay: 1s;
+}
+
+.subSlogan .role .block {
+  animation-delay: 2s;
+}
+
+.subSlogan .role1 .block {
+  animation-delay: 2s;
+}
+
+/* 文字 */
+.indexitem h2 {
+  color: rgb(255, 255, 255, .4);
+}
+
+.indexitem h2:hover {
+  color: rgb(255, 255, 255, .9);
+}
+
+.subSlogan h4 {
+  letter-spacing: .6rem;
+}
+
+.box .title h3,
+.box .role h4,
+.box .role1 h4,
+.subSlogan .role h4,
+.subSlogan .role1 h4 {
+  animation: FadeIn 1s forwards;
+  opacity: 0;
+}
+
+.box .title h3 {
+  animation-delay: 0.5s;
+}
+
+.box .role h4 {
+  animation-delay: 1.5s;
+}
+
+.box .role1 h4 {
+  animation-delay: 1.5s;
+}
+
+.subSlogan .role h4 {
+  animation-delay: 2.5s;
+}
+
+.subSlogan .role1 h4 {
+  animation-delay: 2.5s;
+}
+
+
+
+/* 首頁開始 */
+.indexMenu ul {
+  width: 45%;
+  height: 80%;
+  position: relative;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.aboutIndex,
+.wordIndex,
+.contactIndex {
+  opacity: 0;
+  animation: FadeIn 3s forwards;
+  animation-delay: 3s;
+}
+
+li .aboutIndex {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
+li .wordIndex {
+  position: absolute;
+  top: 40%;
+  right: 5%;
+
+}
+
+li .contactIndex {
+  position: absolute;
+  top: 64%;
+  left: 0%;
+}
+
+/* 導覽列 */
+.menuBar {
+  /* background-image: linear-gradient(to right, var(--black-White)); */
+
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+  right: 0%;
+  z-index: 999;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0 50px 0 50px;
+}
+
+.mainMenu ul {
+  display: flex;
+  align-items: baseline;
+
+}
+
+.mainMenu ul li a {
+  font-family: Tangerine;
+  font-weight: 600;
+  font-size: 4vw;
+  color: var(--White);
+  line-height: 0.6;
+  margin: 0 0 0 60px;
+}
+
+.secondaryMenu {
+  width: 70px;
+  height: 100vh;
+  position: fixed;
+  writing-mode: vertical-lr;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.secondaryMenu ul {
+  display: flex;
+}
+
+.secondaryMenu ul li a {
+  color: var(--White);
+  margin: 30px 0 30px 0;
+  font-size: 1.2vw;
+  letter-spacing: 0.3rem;
+
+}
+
+
+/* About */
+.watermark,
+.watermarkA {
+  writing-mode: vertical-lr;
+  position: fixed;
+  top: -43%;
+  left: -3%;
+  font-family: Tangerine;
+  font-weight: 600;
+  font-size: 33vw;
+  color: var(--White_02);
+  line-height: 0.6;
+}
+
+.introduction,
+.workExperience {
+  width: 100%;
+  height: 90vh;
+  position: relative;
+  top: 10vh;
+  overflow: hidden;
+}
+
+
+.contentBox {
+  width: 50%;
+  height: 90vh;
+  position: absolute;
+  right: 0%;
+  padding: 70px 0 70px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.contentBoxB{
+  width: 61.5%;
+  height: 90vh;
+  position: absolute;
+  right: 0%;
+  padding: 0 50px 0 0; 
+  display: flex;
+  align-items: center
+}
+
+.iconText {
+  display: flex;
+  align-items: flex-end;
+  margin: 10px 0 10px 0;
+
+}
+
+.aboutIcon {
+  width: 30px;
+  height: 30px;
+  margin: 0 15px 0 0;
+}
+
+.cb_content {
+  width: 80%;
+}
+
+
+.decorate{
+  display: flex;
+  width: 5%;
+  justify-content: flex-end;
+  position: relative;
+}
+.decorate .circle{
+  display: block;
+  width: 1.2vw;
+  height: 1.2vw;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  margin: 10px 0 0 0 ;
+}
+.decorate .string{
+  width: 1px;
+  height: 100%;
+  background-color: #FFFFFF;
+  z-index: 3;
+  right: 0.5vw;
+  position: absolute;
+}
+.ta_Horizontal{
+  display: flex;
+}
+.careerContent{
+ width: 80%;
+}
+.year{
+  width: 15%;
+  display: flex;
+  justify-content: center;
+}
+.year p{
+  padding: 7px 0 7pt 0;
+}
+.contentText{
+padding: 0 0 10px 0;
+}
+
+/* word */
+.watermarkA{
+  top:-16%
+}
+.work{
+  width: 100%;
+  height: 90vh;
+  top: 10vh;
+position: relative;
+overflow: scroll;
+}
+.work::-webkit-scrollbar {
+  display: none;
+}
+.workMenu{
+  width: fit-content;
+}
+.w_Decorate{
+  width: 100vw;
+  height: 100vh;
+
+}
+.w_Decorate .watermark{
+  top: -18%;
+}
+.workMenu ul{
+  position: absolute;
+  text-align: right;
+  right: 8%;
+  padding: 20px 0 0 0;
+}
+.workMenu ul li a {
+  font-family: Tangerine;
+  font-weight: 600;
+  font-size: 12vw;
+  color: var(--White);
+  line-height: 1;
+}
+.web::before{}
+
+
+
