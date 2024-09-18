@@ -58,9 +58,10 @@ a {
 
 :root {
   /* 主色調 */
-  --black: #000000;
-  --White: #FFFFFF;
-  --pink: #FD5479;
+  --black: #070600;
+  --White: #F7F7FF;
+  --pink: #EA526F;
+  --blue:#23B5D3;
 
   --White_02: rgb(255, 255, 255, .1);
   --black-White: rgb(0, 0, 0,0.0) 30%,  #000000 50%;
@@ -318,7 +319,6 @@ li .contactIndex {
 /* 導覽列 */
 .menuBar {
   /* background-image: linear-gradient(to right, var(--black-White)); */
-
   width: 100%;
   height: 10vh;
   position: fixed;
@@ -343,6 +343,10 @@ li .contactIndex {
   color: var(--White);
   line-height: 0.6;
   margin: 0 0 0 60px;
+  transition: .35s;
+}
+.mainMenu ul li a:hover{
+  color:var(--pink)
 }
 
 .secondaryMenu {
@@ -353,6 +357,7 @@ li .contactIndex {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  z-index: 999;
 }
 
 .secondaryMenu ul {
@@ -364,8 +369,12 @@ li .contactIndex {
   margin: 30px 0 30px 0;
   font-size: 1.2vw;
   letter-spacing: 0.3rem;
-
+  transition: .35s;
 }
+.secondaryMenu ul li a:hover{
+  color: var(--blue);
+}
+
 
 
 /* About */
@@ -381,7 +390,16 @@ li .contactIndex {
   color: var(--White_02);
   line-height: 0.6;
 }
-
+.watermarkB{
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  font-family: Tangerine;
+  font-weight: 600;
+  font-size: 10vw;
+  color: var(--White_02);
+  line-height: 0.6;
+}
 .introduction,
 .workExperience {
   width: 100%;
@@ -441,13 +459,13 @@ li .contactIndex {
   width: 1.2vw;
   height: 1.2vw;
   border-radius: 50%;
-  background-color: #FFFFFF;
+  background-color:var(--White);
   margin: 10px 0 0 0 ;
 }
 .decorate .string{
   width: 1px;
   height: 100%;
-  background-color: #FFFFFF;
+  background-color: var(--White);
   z-index: 3;
   right: 0.5vw;
   position: absolute;
@@ -499,16 +517,60 @@ overflow: scroll;
   position: absolute;
   text-align: right;
   right: 8%;
-  padding: 20px 0 0 0;
+  padding: 70px 0 70px 0;
 }
 .workMenu ul li a {
   font-family: Tangerine;
   font-weight: 600;
   font-size: 12vw;
-  color: var(--White);
+  color: rgb(255, 255, 255, .4);
   line-height: 1;
+  transition:1s;
 }
-.web::before{}
+.workMenu ul li a:hover{
+  color:var(--White);
+}
+
+.web::after,
+.books::after,
+.vision::after,
+.project::after {
+  background-color: var(--pink);
+  font-size: 1.2vw;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  position: absolute;
+  right: -20%;
+  /* line-height: 1.5; */
+  padding: 5.5px 15px 4px 92px;
+  z-index: -1;
+  color: var(--White);
+}
+.web::after{
+  content: '前端';
+  top: 21%;
+}
+.books::after{
+  content: '書籍';
+  top: 41%;
+}
+.vision::after{
+  content: '視覺';
+  top: 61%;
+}
+.project::after{
+  content: '專案';
+  top: 81%;
+}
+
+.web:hover::after,
+.books:hover::after,
+.vision:hover::after,
+.project:hover::after{
+  background-color: var(--blue);
+}
+
+
 
 
 
