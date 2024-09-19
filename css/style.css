@@ -1,6 +1,5 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css2?family=Chocolate+Classical+Sans&family=Noto+Serif+TC:wght@200..900&display=swap);
-
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
 @font-face {
   font-family: Tangerine;
   src: url(../webfonts/Tangerine.ttf);
@@ -64,7 +63,9 @@ a {
   --blue:#23B5D3;
 
   --White_02: rgb(255, 255, 255, .1);
-  --black-White: rgb(0, 0, 0,0.0) 30%,  #000000 50%;
+  --White_07: rgb(255, 255, 255, .8);
+  --pink2: rgb(234, 82, 111,.3);
+  --black-White: rgba(9, 7, 7, 0) 30%,  #070600 50%;
 
 
 
@@ -116,6 +117,7 @@ p{
   font-size: 1.2vw;
   font-weight: 400;
   letter-spacing: 0.1rem;
+  line-height: 2vw;
 }
 
 /* 文字大box */
@@ -320,7 +322,7 @@ li .contactIndex {
 
 /* 導覽列 */
 .menuBar {
-  /* background-image: linear-gradient(to right, var(--black-White)); */
+  background-image: linear-gradient(to right, var(--black-White));
   width: 100%;
   height: 10vh;
   position: fixed;
@@ -352,8 +354,9 @@ li .contactIndex {
 }
 
 .secondaryMenu {
-  width: 70px;
+  width: fit-content;
   height: 100vh;
+  left: 50px;
   position: fixed;
   writing-mode: vertical-lr;
   display: flex;
@@ -372,6 +375,7 @@ li .contactIndex {
   font-size: 1.2vw;
   letter-spacing: 0.3rem;
   transition: .35s;
+  line-height: 2rem;
 }
 .secondaryMenu ul li a:hover{
   color: var(--blue);
@@ -403,21 +407,29 @@ li .contactIndex {
   line-height: 0.6;
 }
 .introduction,
-.workExperience {
+.workExperience,
+.softwareSkills {
   width: 100%;
   height: 90vh;
   position: relative;
   top: 10vh;
   overflow: hidden;
 }
-
+.textArea {
+  width: 100%;
+  height: 100%;
+  /* background-color: red; */
+  padding: 13vh 0 13vh 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around}
 
 .contentBox {
   width: 50%;
   height: 90vh;
   position: absolute;
   right: 0%;
-  padding: 70px 0 70px 0;
+  padding: 15vh 0 15vh 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -429,7 +441,9 @@ li .contactIndex {
   right: 0%;
   padding: 0 50px 0 0; 
   display: flex;
-  align-items: center
+  align-items: center;
+  font-family: 微軟正黑體;
+  line-height: 1.5vh;
 }
 
 .iconText {
@@ -462,15 +476,17 @@ li .contactIndex {
   height: 1.2vw;
   border-radius: 50%;
   background-color:var(--White);
-  margin: 10px 0 0 0 ;
+  margin: 12px 0 0 0 ;
 }
-.decorate .string{
-  width: 1px;
-  height: 100%;
-  background-color: var(--White);
-  z-index: 3;
-  right: 0.5vw;
-  position: absolute;
+.string{
+    width: 1px;
+    height:54%;
+    background-color: var(--White);
+    z-index: 3;
+    left: 3.7%;
+    position: absolute;
+
+    top: 16vh;
 }
 .ta_Horizontal{
   display: flex;
@@ -479,6 +495,7 @@ li .contactIndex {
  width: 80%;
 }
 .year{
+  font-family:微軟正黑體 ;
   width: 15%;
   display: flex;
   justify-content: center;
@@ -501,11 +518,12 @@ padding: 0 0 10px 0;
 position: relative;
 overflow: scroll;
 }
-.work::-webkit-scrollbar {
+.work::-webkit-scrollbar{
   display: none;
 }
 .workMenu{
-  width: fit-content;
+  width: 100vw;
+  height: 90vh;
 }
 .w_Decorate{
   width: 100vw;
@@ -516,10 +534,12 @@ overflow: scroll;
   top: -18%;
 }
 .workMenu ul{
+  white-space:nowrap;
   position: absolute;
   text-align: right;
-  right: 8%;
-  padding: 70px 0 70px 0;
+  right: 0%;
+  padding: 70px 50px 70px 0;
+  width: 50%;
 }
 .workMenu ul li a {
   font-family: Tangerine;
@@ -533,44 +553,99 @@ overflow: scroll;
   color:var(--White);
 }
 
-.web::after,
-.books::after,
-.vision::after,
-.project::after {
+.web::before,
+.books::before,
+.vision::before,
+.project::before {
   background-color: var(--pink);
   font-size: 1.2vw;
   font-weight: 400;
   letter-spacing: 0.1rem;
   position: absolute;
-  right: -20%;
+  right: 8%;
   /* line-height: 1.5; */
-  padding: 5.5px 15px 4px 92px;
-  z-index: -1;
+  padding: 5.5px 25px 4px 25px;
+
   color: var(--White);
 }
-.web::after{
-  content: '前端';
-  top: 21%;
+.web::before{
+  content: '網站規劃';
+  top: 14%;
+
 }
-.books::after{
-  content: '書籍';
-  top: 41%;
+.books::before{
+  content: '書籍編排';
+  top: 54%;
 }
-.vision::after{
-  content: '視覺';
-  top: 61%;
+.vision::before{
+  content: '視覺設計';
+  top: 34%;
 }
-.project::after{
-  content: '專案';
-  top: 81%;
+.project::before{
+  content: '大型專案';
+  top: 74%;
 }
 
-.web:hover::after,
-.books:hover::after,
-.vision:hover::after,
-.project:hover::after{
-  background-color: var(--blue);
+
+.workWeb,
+.WorksColumn{
+  width: 100%;
+  height: 90vh;
 }
+.workWeb{
+  position: relative;
+  top: 10vh;
+}
+.WorksColumn{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.columnBox{
+  width: 25%;
+  height: 70%;
+  /* background-color: var(--White_07); */
+  border: 1.5px solid var(--White);
+  box-shadow:0 15px 20px 5px var(--pink2) ;
+    margin: 0 15px 0 15px;
+  border-radius: 15px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.columnCover{
+  width: 100%;
+  height: 39%;
+  /* background-color: #EA526F; */
+  border-radius: 7.5px;
+  background-image: url(../images/Web/VSERCover.jpg);
+  background-position: center;
+  /*下面四張圖置中裁切*/
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.columnCopywriting{
+  width: 100%;
+  height: 40%;
+}
+.columnicon{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: flex-end;
+}
+.columnicon a{
+  height: 100%;
+  width: 15%;
+  margin: 0 5px 0 5px;
+  background-color: #bfb476;
+}
+.columnTitle {
+  padding: 0 0 7px;
+}
+
+
 
 
 
