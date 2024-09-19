@@ -564,18 +564,18 @@ overflow: scroll;
   position: absolute;
   right: 8%;
   /* line-height: 1.5; */
-  padding: 5.5px 25px 4px 25px;
+  padding: 9.5px 25px 4px 25px;
 
   color: var(--White);
 }
 .web::before{
   content: '網站規劃';
-  top: 14%;
+  top: 12%;
 
 }
 .books::before{
   content: '書籍編排';
-  top: 54%;
+  top: 56%;
 }
 .vision::before{
   content: '視覺設計';
@@ -583,7 +583,7 @@ overflow: scroll;
 }
 .project::before{
   content: '大型專案';
-  top: 74%;
+  top: 78%;
 }
 
 
