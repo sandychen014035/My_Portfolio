@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .A div {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+        }
+        span {
+            cursor: pointer;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            margin-right: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="A">
+        <div class="B">B</div>
+        <div class="B">B</div>
+        <div class="C">C</div>
+        <div class="C">C</div>
+        <div class="D">D</div>
+        <div class="D">D</div>
+        <div class="E">E</div>
+        <div class="E">E</div>
+        <div class="E">E</div>
+        <div class="E">E</div>
+    </div>
+    <br>
+    <span>b</span> 
+    <span>c</span> 
+    <span>d</span> 
+    <span>e</span> 
+
+    <script>
+        $(document).ready(function() {
+            $('span').click(function() {
+                // 取得點選的文字內容（小寫）
+                var selectedClass = $(this).text().toUpperCase();
+
+                // 隱藏所有的元素
+                $('.A div').hide();
+
+                // 顯示選定類別的元素
+                $('.A div.' + selectedClass).show();
+            });
+        });
+    </script>
+</body>
+</html>

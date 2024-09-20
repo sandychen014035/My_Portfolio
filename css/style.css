@@ -360,9 +360,10 @@ li .contactIndex {
   position: fixed;
   writing-mode: vertical-lr;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-end;
   z-index: 999;
+  padding: 20vh 0 0 0;
 }
 
 .secondaryMenu ul {
@@ -371,7 +372,7 @@ li .contactIndex {
 
 .secondaryMenu ul li a {
   color: var(--White);
-  margin: 30px 0 30px 0;
+  margin: 2vh 0 2vh 0;
   font-size: 1.2vw;
   letter-spacing: 0.3rem;
   transition: .35s;
@@ -450,6 +451,7 @@ li .contactIndex {
   display: flex;
   align-items: flex-end;
   margin: 10px 0 10px 0;
+  font-family: 微軟正黑體;
 
 }
 
@@ -511,20 +513,11 @@ padding: 0 0 10px 0;
 .watermarkA{
   top:-16%
 }
-.work{
-  width: 100%;
-  height: 90vh;
-  top: 10vh;
-position: relative;
-overflow: scroll;
-}
+
 .work::-webkit-scrollbar{
   display: none;
 }
-.workMenu{
-  width: 100vw;
-  height: 90vh;
-}
+
 .w_Decorate{
   width: 100vw;
   height: 100vh;
@@ -553,6 +546,8 @@ overflow: scroll;
   color:var(--White);
 }
 
+
+
 .web::before,
 .books::before,
 .vision::before,
@@ -563,7 +558,6 @@ overflow: scroll;
   letter-spacing: 0.1rem;
   position: absolute;
   right: 8%;
-  /* line-height: 1.5; */
   padding: 9.5px 25px 4px 25px;
 
   color: var(--White);
@@ -604,7 +598,6 @@ overflow: scroll;
 .columnBox{
   width: 25%;
   height: 70%;
-  /* background-color: var(--White_07); */
   border: 1.5px solid var(--White);
   box-shadow:0 15px 20px 5px var(--pink2) ;
     margin: 0 15px 0 15px;
@@ -617,11 +610,9 @@ overflow: scroll;
 .columnCover{
   width: 100%;
   height: 39%;
-  /* background-color: #EA526F; */
   border-radius: 7.5px;
   background-image: url(../images/Web/VSERCover.jpg);
   background-position: center;
-  /*下面四張圖置中裁切*/
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -645,8 +636,124 @@ overflow: scroll;
   padding: 0 0 7px;
 }
 
+/* word */
+/* .work{
+  width: 100%;
+  height: 90vh;
+  top: 10vh;
+position: relative;
+}
+.workMenu{
+  height: 90vh;
+} */
+.work{
+  width: 100%;
+  height: 90vh;
+  top: 10vh;
+  position: relative;
+  overflow: scroll;
+  display: flex;
+  padding: 0px 50px 30px 130px;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.worksArea{
+  width: 100%;
+    height: 100%;
+    padding: 0 70px 0 0;
+}
+.worksField {
+  position: relative; /* 為了讓偽元素相對定位 */
+  border-bottom: 1px solid var(--White);
+  margin-bottom: 1.5vw;
+  padding:0 1vw 1vw 1vw;
+  display: flex;
+  flex-direction: column;
+}
+/* .worksField:nth-child(1),
+.worksField:nth-child(4){
+  padding:0 1vw 1vw 0;
+}
+.worksField:nth-child(3),
+.worksField:nth-child(6){
+  padding:0 0 1vw 1vw;
+} */
+.worksField:nth-child(n+7) {
+  display: none; /* 隱藏第六個元素 */
+}
 
+/* 使用偽元素來控制右邊框的長度 */
+.worksField::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: calc(100% - 1vw); /* 比本身高度少1vw */
+  width: 1px;
+  background-color: var(--White); /* 替代border-right */
+}
 
+/* .worksField:nth-child(3n)::after {
+  display: none;
+} */
+
+.workCover{
+  width: 100%;
+  height: 90%;
+  margin: 0 0 0.7vw 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgb(255, 255, 255,.1);
+}
+.CoverA_1{
+  background-image: url(../images/Web/VSERCover.jpg);
+}
+.CoverA_2{
+  background-image: url(../images/Web/x13Cover.jpg);
+}
+
+.workIntroduction{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+    align-items: center;
+
+}
+.workIcon{
+  width: 30%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(0,1fr));
+}
+.github{
+  background-image: url(../images/Web/icon_github.svg);
+}
+.world{
+  background-image: url(../images/Web/icon_world.svg);
+}
+.ppt{
+  background-image: url(../images/Web/icon_ppt.svg);
+}
+.icon{
+margin:0 0 0 0.5vw ;
+background-position: center;
+/*下面四張圖置中裁切*/
+background-size: contain;
+background-repeat: no-repeat;
+
+}
+
+.worksFieldBox{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  height: 90%;
+}
 
 
 
